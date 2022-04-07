@@ -20,7 +20,6 @@ def solution(numbers):
                     break
         i += 1
     answer = len(number_list)
-    print(answer)
     return answer
 
 def recursion(numbers, temp, index_list, number_list):

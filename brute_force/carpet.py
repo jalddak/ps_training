@@ -24,6 +24,7 @@ def solution(brown, yellow):
             answer.append(width)
             answer.append(length)
             break
-    print(answer)
+
     return answer
+    
 solution(brown, yellow)
