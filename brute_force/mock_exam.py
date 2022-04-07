@@ -65,7 +65,6 @@ def solution(answers):
         elif s2 < s3:
             answer.append(3)
     
-    print(answer)
     return answer
 
 solution(answers)
