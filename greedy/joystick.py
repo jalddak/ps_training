@@ -14,8 +14,10 @@ def solution(name):
         name_int.append(ord(alphabet))
 
     check = 0
-    for not_A in name_int:
-        if not_A != 65:
+    index_list = []
+    for index in range(len(name_int)):
+        if name_int[index] != 65 and index != 0:
+            index_list.append(index)
             check += 1
     
     for num in name_int:
@@ -23,15 +25,6 @@ def solution(name):
             answer += (91 - num)
         else:
             answer += (num - 65)
-
-    if name_int[0] != 65:
-        check -= 1
-        name_int[0] = 65
-
-    index_list = []
-    for index in range(len(name_int)):
-        if name_int[index] != 65:
-            index_list.append(index)
 
     if check == 1:
         answer += min(rightend(index_list), leftend(name_int, index_list))
