@@ -1,6 +1,15 @@
 def solution(clothes):
-    from collections import Counter
-    from functools import reduce
-    cnt = Counter([kind for name, kind in clothes])
-    answer = reduce(lambda x, y: x*(y+1), cnt.values(), 1) - 1
+    answer = 0
+    hash = {}
+    for item in clothes:
+        if item[1] in hash:
+            hash[item[1]] += 1
+        else:
+            hash[item[1]] = 1
+
+    array = list(hash.values())
+    temp = 1
+    for i in array:
+        temp = temp * (i+1)
+    answer = answer + temp - 1
     return answer
