@@ -17,9 +17,9 @@ def solution(routes):
                 break
         if j == len(routes):
             i = j
-        answer += 1
         if i != j:
-            i += 1
+            i += 1 
+        answer += 1
     
     print(answer)
 
