@@ -26,8 +26,6 @@ def search(N, number, dp, N_num, answer, index_start):
     for pair in pairs:
         for i in N_num[pair[0]-1]:
             for j in N_num[pair[1]-1]:
-                if pair[0] == 4 and pair[1] == 3:
-                    print(dp[i], end = ' ')
                 if pair[1] == 1 and i == N_num[pair[0]-1][0]:
                     if dp[i]*10 + dp[j] == number:
                         return answer
