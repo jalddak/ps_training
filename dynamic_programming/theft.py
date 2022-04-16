@@ -16,7 +16,6 @@ def solution(money):
     money_except_first = money[1:]
     last_best_list = []
     for m in money_except_first:
-        print(m)
         if len(last_best_list) == 0:
             best_money = m
         elif len(last_best_list) == 1:
@@ -24,9 +23,6 @@ def solution(money):
         else:
             best_money = max(m + last_best_list[len(last_best_list)-2], last_best_list[len(last_best_list)-1])
         last_best_list.append(best_money)
-    
-    print(first_best_list)
-    print(last_best_list)
 
     answer = max(first_best_list.pop(), last_best_list.pop())
     return answer
