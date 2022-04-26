@@ -22,11 +22,14 @@ def solution(n, computers):
                     break
     i = 0
     while i < len(networks)-1:
-        if networks[i].intersection(networks[i+1]) != set():
-            networks[i].union(networks[i+1])
-            networks.pop(i+1)
-            i = 0
-            continue
+        j = i+1
+        while j < len(networks):
+            if networks[i].intersection(networks[j]) != set():
+                networks[i].union(networks[j])
+                networks.pop(j)
+                j = i+1
+                continue
+            j += 1
         i += 1
     answer = len(networks)
     return answer
