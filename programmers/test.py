@@ -1,9 +1,5 @@
-dic = {}
-dic['a'] = 1
-dic['b'] = 2
-print(dic)
+a = [1,2,3]
+def recursion(test):
+    x, y = None
 
-dic2 = {}
-dic2['b'] = 1
-dic2['a'] = 2
-print(dic2)
+recursion(a)
