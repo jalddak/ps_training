@@ -1,7 +1,9 @@
+# 문제에서 배운 점: 백준은 input 안에 어떤 문자열도 넣으면 안됨. 답은 print 형식으로 해야하는 듯.
+
 import re
 
 def make_board():
-    row_col = input("row and col : ").split()
+    row_col = input().split()
     row = int(row_col[0])
     col = int(row_col[1])
     board = [['' for _ in range(col)] for _ in range(row)]
@@ -41,12 +43,12 @@ def move(board, R_location, B_location, back_move, result):
     if back_move in possible:
         possible.remove(back_move)
     result_list = []
-    print(possible)
-    for i  in range(len(board)):
-        for j in range(len(board[i])):
-            print(board[i][j], end = '')
-        print()
-    print()
+    # print(possible)
+    # for i  in range(len(board)):
+    #     for j in range(len(board[i])):
+    #         print(board[i][j], end = '')
+    #     print()
+    # print()
     for p in possible:
         board_copy = []
         for i in range(len(board)):
@@ -166,9 +168,9 @@ def main():
     result = 0
     result = move(board, R_location, B_location, 'Nope', result)
     if result > 10:
-        return -1
-    else:
-        return result
+        result = -1
+    print(result)
+    return result
 
 
 if __name__ == '__main__':
