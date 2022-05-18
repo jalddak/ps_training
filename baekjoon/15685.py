@@ -1,4 +1,6 @@
 # 이 문제로 배운 점: 어떤 점을 한 꼭지점을 기준으로 90도 회전 시켰을 때의 점의 위치
+# 참고 사이트: http://godingmath.com/rotation90
+
 from collections import deque
 
 def draw_dragon_curve(board, x, y, d, g, index):
