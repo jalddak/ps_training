@@ -15,6 +15,7 @@ def draw_dragon_curve(board, x, y, d, g, index):
         increase = 0
         for j in range(1, len(locations)):
             j += increase
+            # 이 문제에서 90도 회전하는데 y좌표는 일반적인 좌표랑 다르게 위로 갈 수록 작아지는 값이라서 그 점을 생각해서 값을 정해줘야함
             after_minus = (locations[j][0] - standard[0], locations[j][1] - standard[1])
             after_rotate = (-after_minus[1] + standard[0] , after_minus[0] + standard[1])
             locations.appendleft(after_rotate)
