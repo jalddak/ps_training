@@ -37,8 +37,8 @@ print(set1 | set2) # {1, 2, 3, 4}
 print(set1.union(set2)) # {1, 2, 3, 4}
 print(set1 | set3) # {1, 2, 3, 4, 5, 6}
 
+count = 5
+for i in range(1,count):
+    print(i)
+    count += 1
 
-for i in range(1,6):
-    if i == 3:
-        break
-print(i)
