@@ -42,3 +42,8 @@ for i in range(1,count):
     print(i)
     count += 1
 
+a = [['w' for _ in range(3)] for _ in range(3)]
+e = [a[0][0]]
+print(e, a)
+a[0][0] = 'a'
+print(e, a)
