@@ -1,5 +1,5 @@
-a = [1,2,3]
-def recursion(test):
-    x, y = None
+a = [9, 98, 999, 888]
+b = [str(i) for i in a]
+b.sort(reverse = True)
 
-recursion(a)
+print(b)
