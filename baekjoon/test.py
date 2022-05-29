@@ -53,3 +53,9 @@ a = {1 : 123, 2: 234, 3: 345, 124: 1251234}
 print(len(a))
 a[124123] = 123124
 print(a)
+
+a = [4, 3, 1, 2]
+index = a.index(4)
+b = a[:index]
+c = a[index:]
+print(index, b, c)
