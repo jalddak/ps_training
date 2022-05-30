@@ -26,6 +26,10 @@
 		EA61B2DC2843F35D00B3CF14 /* 1330.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 1330.swift; path = baekjoon/step2/1330.swift; sourceTree = SOURCE_ROOT; };
 		EA61B2DE2843F5D200B3CF14 /* 9498.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9498.swift; sourceTree = "<group>"; };
 		EA61B2DF2843F6EE00B3CF14 /* 2753.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2753.swift; sourceTree = "<group>"; };
+		EA61B2E02844E55800B3CF14 /* 14681.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 14681.swift; sourceTree = "<group>"; };
+		EA61B2E12844E67600B3CF14 /* 2884.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2884.swift; sourceTree = "<group>"; };
+		EA61B2E22844E7A900B3CF14 /* 2525.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2525.swift; sourceTree = "<group>"; };
+		EA61B2E32844EF1000B3CF14 /* 2480.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2480.swift; sourceTree = "<group>"; };
 		EAE20EC72843E7B1000A8EAA /* swift_ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swift_; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE20ECA2843E7B1000A8EAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAE20EE72843E82A000A8EAA /* 1000.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1000.swift; sourceTree = "<group>"; };
@@ -56,6 +60,10 @@
 		EA61B2DB2843F2A100B3CF14 /* step2 */ = {
 			isa = PBXGroup;
 			children = (
+				EA61B2E32844EF1000B3CF14 /* 2480.swift */,
+				EA61B2E22844E7A900B3CF14 /* 2525.swift */,
+				EA61B2E12844E67600B3CF14 /* 2884.swift */,
+				EA61B2E02844E55800B3CF14 /* 14681.swift */,
 				EA61B2DF2843F6EE00B3CF14 /* 2753.swift */,
 				EA61B2DE2843F5D200B3CF14 /* 9498.swift */,
 				EA61B2DC2843F35D00B3CF14 /* 1330.swift */,
