@@ -59,3 +59,16 @@ index = a.index(4)
 b = a[:index]
 c = a[index:]
 print(index, b, c)
+
+x = 2
+N = 100
+for i in range(x, N+1, x):
+    print(i, end=' ')
+print()
+
+from collections import deque
+
+a = deque([1,2,3,4])
+a.appendleft(a.pop())
+print(a)
+print(list(a)[1:])
