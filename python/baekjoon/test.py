@@ -76,5 +76,7 @@ print(list(a)[1:])
 a = (1,2,3)
 c = (4,5,6)
 b = a
-b[2] += 1
-print(a,b,c)
+
+for i in range(9, 4, -1):
+    print(i, end=' ')
+print()
