@@ -83,3 +83,34 @@ print()
 a = [1,2,3,4]
 a.insert(2, 5)
 print(a)
+
+dic = {1 : 4, 2:5, 3:6}
+for i in dic:
+    print(dic[i])
+print(dict(list(dic.items())[:]))
+
+list = [[[1, 2, 3],
+        [4, 5, 6]],
+
+       [[7, 8, 9],
+        [10, 11, 12]]]
+
+print(list)
+list_copy = []
+for i in range(len(list)):
+    list_copy_2 = []
+    for j in range(len(list[i])):
+        list_copy_3 = list[i][j][:]
+        list_copy_2.append(list_copy_3)
+    list_copy.append(list_copy_2)
+
+list_copy_second = [[list[i][j][:] for j in range(len(list[i]))] for i in range(len(list))]
+list_copy_third = [[item[:] for item in list_row] for list_row in list]
+
+list_copy[1][1][1] = 1245
+list_copy_second[1][1][1] = 2222
+list_copy_third[1][1][1] = 3333
+print(list)
+print(list_copy)
+print(list_copy_second)
+print(list_copy_third)
