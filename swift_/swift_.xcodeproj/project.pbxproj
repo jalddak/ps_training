@@ -44,6 +44,9 @@
 		EAE20EF12843EEFF000A8EAA /* 18108.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18108.swift; sourceTree = "<group>"; };
 		EAE20EF32843F037000A8EAA /* 10430.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10430.swift; sourceTree = "<group>"; };
 		EAE20EFF2843F0E0000A8EAA /* 2588.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2588.swift; sourceTree = "<group>"; };
+		EAF98060284A1354005E52F4 /* 2739.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2739.swift; sourceTree = "<group>"; };
+		EAF98061284A14FC005E52F4 /* 8393.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8393.swift; sourceTree = "<group>"; };
+		EAF98062284A1522005E52F4 /* 10950.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10950.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		EAE20EE42843E7EF000A8EAA /* baekjoon */ = {
 			isa = PBXGroup;
 			children = (
+				EAF98063284A152F005E52F4 /* step3 */,
 				EA61B2DB2843F2A100B3CF14 /* step2 */,
 				EAE20EF22843F023000A8EAA /* step1 */,
 			);
@@ -122,6 +126,16 @@
 				EAE20EF12843EEFF000A8EAA /* 18108.swift */,
 			);
 			path = step1;
+			sourceTree = "<group>";
+		};
+		EAF98063284A152F005E52F4 /* step3 */ = {
+			isa = PBXGroup;
+			children = (
+				EAF98062284A1522005E52F4 /* 10950.swift */,
+				EAF98061284A14FC005E52F4 /* 8393.swift */,
+				EAF98060284A1354005E52F4 /* 2739.swift */,
+			);
+			path = step3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
