@@ -23,6 +23,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA3D2192284CB64D00F7E4EB /* 10818.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10818.swift; sourceTree = "<group>"; };
+		EA3D2194284CB96900F7E4EB /* 2562.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2562.swift; sourceTree = "<group>"; };
+		EA3D2196284CC03300F7E4EB /* 2577.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2577.swift; sourceTree = "<group>"; };
+		EA3D2198284CC16A00F7E4EB /* 3052.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3052.swift; sourceTree = "<group>"; };
+		EA3D219A284CC4E700F7E4EB /* 1546.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1546.swift; sourceTree = "<group>"; };
+		EA3D219C284CC5F100F7E4EB /* 8958.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8958.swift; sourceTree = "<group>"; };
+		EA3D219E284CC90E00F7E4EB /* 4344.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4344.swift; sourceTree = "<group>"; };
 		EA61B2DC2843F35D00B3CF14 /* 1330.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 1330.swift; path = baekjoon/step2/1330.swift; sourceTree = SOURCE_ROOT; };
 		EA61B2DE2843F5D200B3CF14 /* 9498.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9498.swift; sourceTree = "<group>"; };
 		EA61B2DF2843F6EE00B3CF14 /* 2753.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2753.swift; sourceTree = "<group>"; };
@@ -70,6 +77,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3D2191284CB64100F7E4EB /* step4 */ = {
+			isa = PBXGroup;
+			children = (
+				EA3D219E284CC90E00F7E4EB /* 4344.swift */,
+				EA3D219C284CC5F100F7E4EB /* 8958.swift */,
+				EA3D219A284CC4E700F7E4EB /* 1546.swift */,
+				EA3D2198284CC16A00F7E4EB /* 3052.swift */,
+				EA3D2196284CC03300F7E4EB /* 2577.swift */,
+				EA3D2194284CB96900F7E4EB /* 2562.swift */,
+				EA3D2192284CB64D00F7E4EB /* 10818.swift */,
+			);
+			path = step4;
+			sourceTree = "<group>";
+		};
 		EA61B2DB2843F2A100B3CF14 /* step2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +126,7 @@
 		EAE20EE42843E7EF000A8EAA /* baekjoon */ = {
 			isa = PBXGroup;
 			children = (
+				EA3D2191284CB64100F7E4EB /* step4 */,
 				EAF98063284A152F005E52F4 /* step3 */,
 				EA61B2DB2843F2A100B3CF14 /* step2 */,
 				EAE20EF22843F023000A8EAA /* step1 */,
