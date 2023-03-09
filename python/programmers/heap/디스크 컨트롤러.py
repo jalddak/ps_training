@@ -14,7 +14,7 @@ def solution(jobs):
         else:
             work = queue.pop()
             time += work[1]
-        while len(jobs) != 0 and time > jobs[0][0]:
+        while len(jobs) != 0 and time >= jobs[0][0]:
             queue.append(jobs.popleft())
             
         queue.sort(key=lambda x: (x[1]), reverse = True)
