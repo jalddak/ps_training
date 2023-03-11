@@ -10,6 +10,10 @@ def solution(k, dungeons):
                 answer[i] += solution(new_k, new_dungeons)
         else:
             answer.append(0)
+            new_dungeons = dungeons[:]
+            new_dungeons.pop(i)
+            if len(new_dungeons) != 0:
+                answer[i] += solution(k, new_dungeons)
     answer = max(answer)
             
     return answer
