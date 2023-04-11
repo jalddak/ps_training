@@ -1,5 +1,3 @@
-a = 100
-while a > 10:
-    print (a % 10)
-    a = a // 10
-print(a)
+a = [1,2,3,4,5,6]
+
+print(a.pop(3))
