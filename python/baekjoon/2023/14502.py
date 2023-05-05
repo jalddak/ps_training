@@ -1,3 +1,5 @@
+# visited 관련 코드 다 빼는게 더 빠름
+
 first_row = list(map(int, input().split()))
 n = first_row[0]
 m = first_row[1]
