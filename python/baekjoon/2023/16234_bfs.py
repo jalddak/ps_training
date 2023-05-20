@@ -1,3 +1,5 @@
+from collections import deque
+
 n, l, r = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(n)]
 union = [[0 for _ in range(n)] for _ in range(n)]
@@ -16,9 +18,9 @@ while True:
                 num += 1
                 cnt = 0
                 population = 0
-                stack = [[i, j]]
-                while len(stack) != 0:
-                    y, x = stack.pop()
+                queue = deque([[i, j]])
+                while len(queue) != 0:
+                    y, x = queue.popleft()
                     current = board[y][x]
                     for k in range(4):
                         ay = y + dy[k]
@@ -28,7 +30,7 @@ while True:
                             if l <= abs(current - around) <= r:
                                 check = 1
                                 if union[ay][ax] == 0:
-                                    stack.append([ay, ax])
+                                    queue.append([ay, ax])
                                     if union[y][x] == 0:
                                         union[y][x] = num
                                         population += board[y][x]
