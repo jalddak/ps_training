@@ -73,6 +73,8 @@ def main():
     for _ in range(T):
         diffusion(room, R, C)
         clean(room, air_cleaner, R, C)
+        for j in range(R):
+            print(room[j])
 
     dust = 0
     for i in range(R):
