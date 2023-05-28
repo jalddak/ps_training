@@ -90,10 +90,6 @@ def main():
                 if len(piece[after_y][after_x]) >= 4:
                     print(turn)
                     return turn
-
-        for i in range(N):
-            print(piece[i])         
-        print()
     print(-1)
     return -1
 
