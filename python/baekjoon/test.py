@@ -4,9 +4,7 @@ if x > 3 or board[x] == 2:
     print('asd')
 
 
-a = [1,2,3]
-b = [1,2,3]
-if a == b:
-    print(b)
+a = [1, 3, 5 ,7]
+a = set(map(lambda x: x%2, a))
 
-print(b.index(4))
+print(a, len(a))
