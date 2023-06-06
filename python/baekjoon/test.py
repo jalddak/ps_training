@@ -1,10 +1,4 @@
-board = [0, 0, 0, 0]
-x = 4
-if x > 3 or board[x] == 2:
-    print('asd')
+board = [[1, 2, 3, 4, 5], [1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5]]
 
-
-a = [1, 3, 5 ,7]
-a = set(map(lambda x: x%2, a))
-
-print(a, len(a))
+for i in range(2,4):
+    print(board[i][2:4])
