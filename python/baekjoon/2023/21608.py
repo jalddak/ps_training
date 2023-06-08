@@ -35,10 +35,10 @@ def find(board, student, likes):
                 elif tl == like and te > empty:
                     like, empty = tl, te
                     loca = [i, j]
-                elif tl == like and te == empty and len(loca) == 0 or loca[0] > i:
+                elif tl == like and te == empty and (len(loca) == 0 or loca[0] > i):
                     like, empty = tl, te
                     loca = [i, j]
-                elif tl == like and te == empty and len(loca) == 0 or loca[0] == i and loca[1] > j:
+                elif tl == like and te == empty and loca[0] == i and loca[1] > j:
                     like, empty = tl, te
                     loca = [i, j]
     
