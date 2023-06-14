@@ -1,4 +1,6 @@
-a = [[1, 2]]
+from collections import deque
 
-for d in '123':
-    print(int(d))
+a = deque([1,2,3])
+
+a.reverse()
+print(a)
