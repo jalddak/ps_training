@@ -1,5 +1,4 @@
-a = [1,2,3,4,5]
+a = [[1, 2]]
 
-for i in range(-123):
-    print(i)
-print(a[:4])
+for d in '123':
+    print(int(d))
