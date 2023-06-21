@@ -11,7 +11,7 @@ def solution(jobs):
     heap = []
 
     while len(jobs) > 0 or len(heap) > 0:
-        while len(jobs) > 0 and jobs[0][0] <= end:
+        while (len(jobs) > 0 and jobs[0][0] <= end):
             job = jobs.popleft()
             heapq.heappush(heap, (end+job[1], job[0]))
         if len(heap) == 0:
@@ -27,5 +27,3 @@ def solution(jobs):
         end = new_end
 
     return answer // length
-
-print(solution([[0, 5], [7, 5], [14, 5]]))
