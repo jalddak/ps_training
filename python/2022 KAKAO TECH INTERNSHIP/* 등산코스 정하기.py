@@ -1,3 +1,4 @@
+# heap 이용해서 푸는 문제라고함. dfs로 조건 최대한 걸러가며 풀려고했는데 안됨.
 # 61.3점
 
 def dfs(node, summits, paths, gates, routes, intensity, max_cost):
