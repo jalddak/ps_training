@@ -27,11 +27,14 @@ def solution(n, paths, gates, summits):
     
     while len(heap) != 0:
         cost, node = heapq.heappop(heap)
+        # 어차피 힙에서 cost가 기존 answer 값보다 커지면 전부다 크단얘기니까 걍 멈추는게 낫다
+        if cost > answer[1]:
+            break
         if not visited[node]:
             intensities[node] = cost
         else:
             if answer[0] != -1:
-                if cost > answer[1] or node > answer[0]:
+                if node > answer[0]:
                     continue
         visited[node] = True
 
