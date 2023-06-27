@@ -26,14 +26,13 @@ def solution(n, paths, gates, summits):
     gates, summits = set(gates), set(summits)
     
     while len(heap) != 0:
-        print(heap)
         cost, node = heapq.heappop(heap)
         if not visited[node]:
             intensities[node] = cost
         else:
             if answer[0] != -1:
-                if intensities[node] > answer[1] or cost > answer[1] or node > answer[0]:
-                    continue 
+                if cost > answer[1] or node > answer[0]:
+                    continue
         visited[node] = True
 
         if node in summits:
@@ -49,13 +48,3 @@ def solution(n, paths, gates, summits):
             heapq.heappush(heap, (max(intensities[node], n_cost), n_node))
         
     return answer
-
-n = 7
-paths = [[1, 4, 4], [1, 6, 1], [1, 7, 3], [2, 5, 2], [3, 7, 4], [5, 6, 6]]
-gates = [2]
-summits = [3, 4]
-print(solution(n, paths, gates, summits))
-
-
-print(solution(6, [[1, 2, 3], [2, 3, 1], [2, 4, 2], [2, 5, 4], [3, 4, 4], [4, 5, 3], [4, 6, 1], [5, 6, 1]], [1, 3], [5]))
-# print(solution(7, [[1, 2, 5], [1, 4, 1], [2, 3, 1], [2, 6, 7], [4, 5, 1], [5, 6, 1], [6, 7, 1]], [3, 7], [1, 5]))
