@@ -1,3 +1,5 @@
+# bfs or dfs
+
 # bfs
 from collections import deque
 
