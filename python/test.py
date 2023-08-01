@@ -1,1 +1,3 @@
-print(type(ord('A')))
+dp = []
+
+print(dp[0-1])
