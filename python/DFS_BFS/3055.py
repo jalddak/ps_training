@@ -48,5 +48,4 @@ while len(queue) != 0:
                     print(cnt + 1)
                     exit(0)
     queue = n_queue
-
 print('KAKTUS')
