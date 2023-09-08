@@ -13,7 +13,7 @@ for _ in range(r):
 dy = [-1, 0, 1, 0]
 dx = [0, 1, 0, -1]
 
-answer = 0
+answer = 05
 
 for i in range(r):
     for j in range(c):
