@@ -1,5 +1,7 @@
 # DFS
 
+# 36퍼 쯤에서 recursionerror가 나와서 리미트 해제해줌
+# 깊이를 너무 깊게 가능하게 하면 pypy3 에서 메모리 초과가 남.
 import sys
 sys.setrecursionlimit(10 ** 4)
 
