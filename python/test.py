@@ -1,5 +1,9 @@
 a = ['a', 'b', 'c']
 
-b = str(a)
+b = ''.join(a)
+c = ' '.join(a)
+d = '^^^'.join(a)
 
 print(b)
+print(c)
+print(d)
