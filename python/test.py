@@ -1,18 +1,8 @@
-a = ['a', 'b', 'c']
+a = 3
 
-b = ''.join(a)
-c = ' '.join(a)
-d = '^^^'.join(a)
+b = a ** (1/2)
 
-print(b)
-print(c)
-print(d)
+print(a, b, a%b)
 
-a = [1,2,3]
-print(a[:1])
-print(sum(a[:2]))
-
-a = [1,0,0,0,1]
-print(set(a))
-
-print(set(a))
+if a%b == 0:
+    print('asd')
