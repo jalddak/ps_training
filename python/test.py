@@ -1,8 +1,6 @@
-a = 3
+a = [3, 3, 3,3 ]
 
-b = a ** (1/2)
+b = [0, 0, 0,123]
 
-print(a, b, a%b)
-
-if a%b == 0:
-    print('asd')
+c = list(zip(a, b))
+print(c)
