@@ -1,6 +1,4 @@
-a = [3, 3, 3,3 ]
+a = "1/2/3"
 
-b = [0, 0, 0,123]
-
-c = list(zip(a, b))
-print(c)
+b = a.split('/')
+print(b)
