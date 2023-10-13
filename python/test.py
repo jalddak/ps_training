@@ -1,4 +1,5 @@
-a = "1/2/3"
+a = set([1,2,3])
 
-b = a.split('/')
-print(b)
+b = set([3,2])
+
+print(a==b)
