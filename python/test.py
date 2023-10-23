@@ -1,26 +1,16 @@
-N, r, c = list(map(int, input().split()))
-
-dy = [0, 0, 1, 1]
-dx = [0, 1, 0, 1]
-
-def f(y, x, num, length):
-    if length == 1:
-        print(num)
+i = 1
+flag = 0
+for n in list(map(int, input().split())):
+    if n == i and flag != -1:
+        flag = 1
+    elif n == 9 - i and flag != 1:
+        flag = -1
+    else:
+        print("mixed")
         exit()
+    i += 1
 
-    n_len = length // 2
-    d = 0
-    if r < y + n_len and c >= x + n_len:
-        d = 1
-    elif r >= y + n_len and c < x + n_len:
-        d = 2
-    elif r >= y + n_len and c >= x + n_len:
-        d = 3
-
-    increase = (length // 2) ** 2
-    ny = y + dy[d] * (length // 2)
-    nx = x + dx[d] * (length // 2)
-    n_num = num + d * increase
-    f(ny, nx, n_num, n_len)
-
-f(0, 0, 0, 2**N)
+if flag == 1:
+    print("ascending")
+else:
+    print("descending")
