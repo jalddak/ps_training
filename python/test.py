@@ -1,11 +1,4 @@
-4 4 2
-1 1 1 1
-1 1 1 0
-1 1 0 1
-0 1 0 1
+test1 = [1,2,3]
+test2 = [1,2,3]
 
-
-    print(cols, result)
-    for i in range(N):
-        print(copy[i])
-    print()
+print(test1 == test2)
