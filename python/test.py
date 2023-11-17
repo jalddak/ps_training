@@ -1,9 +1,8 @@
-
-print(1/2)
-print(round(-5/2))
-
-a = 'asdf'
-
-print(a[:-1])
-
-print(int('1011', 2))
+a = "qwerasd"
+a = list(a)
+a[0], a[-1] = a[-1], a[0]
+stack = []
+for _ in range(10):
+    stack.append(''.join(a))
+print(stack)
+print(list(set(stack)))
