@@ -24,7 +24,7 @@ for round in range(1, T+1):
     visited[0] = 1
     result = [0]
     for n in nl:
-        for r in result:
+        for r in result[:]:
             print(n+r)
             if visited[n+r] == 0:
                 visited[n+r] = 1
