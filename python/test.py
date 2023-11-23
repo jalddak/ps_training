@@ -1,3 +1,5 @@
-a = [1,2,3,4,5]
+a = 'A'
+b = chr(ord(a) + 1)
+print(a, b)
 
-print(a[4:5])
+print(set([1,3]) == set([3,1]))
