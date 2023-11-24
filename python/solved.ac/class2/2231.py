@@ -6,9 +6,8 @@ for n in range(N):
     for s in nstr:
         ts += int(s)
     c = n + ts
-    print(c, n)
     if c == N:
-        print(c)
+        print(n)
         exit()
 
 print(0)

@@ -1,5 +1,3 @@
-a = 'A'
-b = chr(ord(a) + 1)
-print(a, b)
+a = [list(map(int, input().split())) for _ in range(9)]
 
-print(set([1,3]) == set([3,1]))
+print(a[:][1])
