@@ -23,7 +23,9 @@ for i in range(N):
                         stack.append((ny, nx))
                         visited[ny][nx] = True
             break
-
-print(result)
+if result == 0:
+    print("TT")
+else:
+    print(result)
 
 
