@@ -1,3 +1,5 @@
+# 비둘기 집의 원리
+
 import sys
 input = sys.stdin.readline
 
@@ -27,6 +29,39 @@ for _ in range(T):
         s += 1
     results.append(n)
 
+
+for r in results:
+    print(r)
+
+# 첫번째 방법
+import sys
+input = sys.stdin.readline
+
+from itertools import combinations
+
+T = int(input())
+
+results = []
+for _ in range(T):
+    N = int(input())
+    hs = input().split()
+    if N > 32:
+        results.append(0)
+        continue
+    matching = list(combinations(hs, 3))
+    candidates = []
+    for one, two, three in matching:
+        n = 0
+        for i in range(4):
+            if one[i] != two[i]:
+                n += 1
+            if two[i] != three[i]:
+                n += 1
+            if one[i] != three[i]:
+                n += 1
+        candidates.append(n)
+    
+    results.append(min(candidates))
 
 for r in results:
     print(r)
