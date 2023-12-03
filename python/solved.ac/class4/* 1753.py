@@ -46,7 +46,10 @@ for _ in range(E):
     if start-1 not in d:
         d[start-1] = {end-1:dist}
     else:
-        d[start-1][end-1] = dist
+        if end-1 not in d[start-1]:
+            d[start-1][end-1] = dist
+        else:
+            d[start-1][end-1] = min(d[start-1][end-1], dist)
 
 import heapq
 
