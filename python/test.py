@@ -1,7 +1,11 @@
-a = [(-1, 1), (-2, 2)]
+from multiprocessing import Process
+import os
 
-a = list(map(lambda x:x[0]-1, a))
-print(a)
+def foo():
+    print("foo : current process : ", os.getpid())
+    print("foo : parent process : ", os.getppid())
 
-a = '-1234'
-print(int(a))
+if __name__ == "__main__":
+    print("process : ", os.getpid())
+    # foo()
+    child = Process(target=foo).start()
