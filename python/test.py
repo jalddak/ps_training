@@ -1,11 +1,4 @@
-from multiprocessing import Process
-import os
+A = [1,2,3,4,5]
+B = [2,3,4,5]
 
-def foo():
-    print("foo : current process : ", os.getpid())
-    print("foo : parent process : ", os.getppid())
-
-if __name__ == "__main__":
-    print("process : ", os.getpid())
-    # foo()
-    child = Process(target=foo).start()
+print(A+B)
