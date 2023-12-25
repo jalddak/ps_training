@@ -1,3 +1,4 @@
+# pypy 만 통과
 first = input()
 second = input()
 
@@ -18,7 +19,7 @@ print(length)
 if length:
     print(board[-1][-1])
 
-
+# python 도 통과
 first = input()
 second = input()
 

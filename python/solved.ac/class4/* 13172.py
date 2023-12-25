@@ -23,7 +23,7 @@ for n, s in ns:
     gcd = math.gcd(n, s)
     n //= gcd
     s //= gcd
-    result = s * solution(n, mod_n-2) % mod_n
+    result += s * solution(n, mod_n-2) % mod_n
     result %= mod_n
 
 print(result)
