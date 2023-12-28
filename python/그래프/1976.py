@@ -1,3 +1,4 @@
+# 플워
 import sys
 input = sys.stdin.readline
 
@@ -23,7 +24,7 @@ for n in route:
         exit()
 print("YES")
 
-
+# 유니온 파인드
 import sys
 input = sys.stdin.readline
 
@@ -31,7 +32,6 @@ N = int(input())
 M = int(input())
 
 board = [list(map(int, input().split())) for _ in range(N)]
-
 route = list(map(lambda x:x-1, map(int, input().split())))
 
 roots = [i for i in range(N)]
@@ -60,3 +60,28 @@ for n in route:
         print("NO")
         exit()
 print("YES")
+
+
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+M = int(input())
+
+board = [list(map(int, input().split())) for _ in range(N)]
+route = list(map(lambda x:x-1, map(int, input().split())))
+
+candidate = set()
+stack = [route[0]]
+candidate.add(route[0])
+while stack:
+    n = stack.pop()
+    for i in range(N):
+        if board[n][i] == 1 and i not in candidate:
+            candidate.add(i)
+            stack.append(i)
+
+if candidate & set(route) == set(route):
+    print("YES")
+else:
+    print("NO")
