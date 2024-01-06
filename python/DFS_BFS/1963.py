@@ -46,7 +46,7 @@ for r in results:
     print(r)
 
 
-
+# 소수 찾는법 더 빠르게: 에라어쩌구 체
 import sys
 input = sys.stdin.readline
 
