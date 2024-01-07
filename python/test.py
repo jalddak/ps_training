@@ -1,3 +1,6 @@
-a = (1,2,5,6)
-
-print(a[3])
+N = int(input())
+n = int(input())
+l = list(map(int, input().split()))
+for _ in range(N):
+    print(n)
+    
