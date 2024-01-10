@@ -1,6 +1,3 @@
-N = int(input())
-n = int(input())
-l = list(map(int, input().split()))
-for _ in range(N):
-    print(n)
-    
+a = [1,2,3]
+
+print(a[0:5])
