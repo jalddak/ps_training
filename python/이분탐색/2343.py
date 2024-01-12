@@ -4,7 +4,7 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 nums = list(map(int, input().split()))
 
-min_t = 0
+min_t = max(nums)-1
 max_t = sum(nums)
 
 while min_t + 1 < max_t:
@@ -12,17 +12,14 @@ while min_t + 1 < max_t:
 
     temp = 0
     cnt = 1
-    check = True
     for n in nums:
         if temp + n <= mid:
             temp += n
         else:
             temp = n
             cnt += 1
-            if temp > mid:
-                check = False
 
-    if cnt > M or not check:
+    if cnt > M:
         min_t = mid
     else:
         max_t = mid
