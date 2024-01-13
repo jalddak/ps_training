@@ -1,5 +1,4 @@
-n = 0
+a = {"a" : 123}
+b = a.get("b", 0)
 
-for i in range(100000):
-    n += i
-print(n)
+print(a, b)
