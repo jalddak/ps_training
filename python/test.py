@@ -1,2 +1,6 @@
-a = {"a" : 123}
-a["b"] = a.get("b", 0)
+a = set([10, 1, 2])
+print(a)
+a.discard(10)
+print(a)
+a.discard(10)
+print(a)
