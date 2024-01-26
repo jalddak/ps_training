@@ -1,3 +1,5 @@
+# LCS 알고리즘 : https://velog.io/@emplam27/알고리즘-그림으로-알아보는-LCS-알고리즘-Longest-Common-Substring와-Longest-Common-Subsequence
+
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         n, m = len(text1), len(text2)
