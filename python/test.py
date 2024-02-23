@@ -1,6 +1,5 @@
-a = set([10, 1, 2])
-print(a)
-a.discard(10)
-print(a)
-a.discard(10)
-print(a)
+a = 1
+b = 2
+
+if a == b or a == b + 1:
+    print(a, b)
