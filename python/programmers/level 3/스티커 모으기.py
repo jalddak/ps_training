@@ -14,7 +14,5 @@ def solution(sticker):
     ss = sticker[1:]
     
     answer = max(dp_calc(sf)[-1], dp_calc(ss)[-1])
-    return answer
     
-
     return answer

@@ -1,3 +1,5 @@
-answer = [1,2,3,4,5]
+a = set()
+b = set()
 
-print(answer[0:1] + answer[2:])
+a.add(1)
+print(b)
