@@ -1,7 +1,4 @@
-a = []
+a = [1, 2, 3, 4]
+b = [1, 2, 3, 4]
 
-for i in range(1, 21):
-    a.append(i)
-
-a.reverse()
-print(a)
+print(a==b)
