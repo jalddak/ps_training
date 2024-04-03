@@ -55,6 +55,8 @@ def solution(n, k, cmd):
     
     return "".join(answer)
 
+
+##################################################
 class Node:
     def __init__(self, data, prev, next):
         self.delete = False
