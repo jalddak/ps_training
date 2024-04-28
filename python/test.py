@@ -1,1 +1,1 @@
-print(int(1.234))
+print([n for n in range(86, 101)])
