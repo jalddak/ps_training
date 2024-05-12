@@ -1,1 +1,0 @@
-print([n for n in range(86, 101)])
