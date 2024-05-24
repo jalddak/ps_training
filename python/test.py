@@ -1,6 +1,5 @@
-t = {}
-t[1] = "asd"
-t[2] = "gfgfd"
+a = 3
 
-for key in t:
-    print(key)
+a **= 3
+
+print(a)
