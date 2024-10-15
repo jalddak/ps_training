@@ -1,1 +1,2 @@
-print(type('2') == int)
+for i in 'asdf':
+    print(i)
