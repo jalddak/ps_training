@@ -7,3 +7,18 @@
 #         print("right")
 #     else:
 #         print("wrong")
+
+import sys
+input = sys.stdin.readline
+
+while(True):
+    cmd = list(map(int, input().split()))
+    cmd.sort()
+    a, b, c = cmd
+    if (a == b == c == 0):
+        break
+    elif (a*a + b*b == c*c):
+        print("right")
+    else:
+        print("wrong")
+

@@ -31,4 +31,5 @@ answer = 0
 for n in nums:
     if check[n]:
         answer += 1
+        
 print(answer)
