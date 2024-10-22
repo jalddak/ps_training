@@ -1,1 +1,4 @@
-print([1] + [0 for _ in range(15)])
+a = [i for i in range(13)]
+
+a.sort(lambda x:-x)
+print(a)
