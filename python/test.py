@@ -1,4 +1,1 @@
-a = [i for i in range(1, 11)]
-print(a)
-
-print(a[1:10-1])
+print(48 / 2 * (9 + 3))
