@@ -1,1 +1,1 @@
-print(48 / 2 * (9 + 3))
+print(list("asdfasdf"))
