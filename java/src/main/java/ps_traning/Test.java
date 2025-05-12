@@ -1,9 +1,7 @@
 package ps_traning;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Test {
 
@@ -20,6 +18,13 @@ public class Test {
         String binary = Integer.toString(ten, 2);
         System.out.println("binary = " + binary);
 
+        int[] arr = {1, 2, 3, 4, 5};
+        int i = 0;
+        System.out.println(arr[i++] + " " + i);
+
+        List<Integer> temp = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+        temp.remove(2);
+        System.out.println(temp.toString());
 
     }
 }
