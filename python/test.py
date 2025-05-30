@@ -1,25 +1,14 @@
-n = int(input())
-nums = list(map(int, input().split()))
+print(ord('c'))
+print(chr(99))
+print(ord('C'))
+print(chr(67))
 
-def check(arr, index, num):
-    return arr[index] < num
+print(chr(ord('C') + 32))
 
-def bs(arr, num, s, e):
-    while s + 1 < e:
-        mid = (s+e) // 2
-        if check(arr, mid, num):
-            s = mid
-        else:
-            e = mid
-    
-    if e == len(arr):
-        arr.append(num)
-        return
-    arr[e] = num
+lower = []
+upper = []
+for i in range(26):
+    tmp = ord('a')
+    l.append(chr(i + tmp))
 
-
-arr = []
-for num in nums:
-    bs(arr, num, -1, len(arr))
-
-print(len(arr))
+print(l)
