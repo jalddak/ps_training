@@ -1,1 +1,4 @@
-print(1<<1)
+
+a = "asd"
+b = 3
+print(" " * b + a)
