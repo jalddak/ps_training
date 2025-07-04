@@ -8,6 +8,8 @@ public class Test {
         System.out.println(1 << 1);
         System.out.println(2 ^ 1);
         System.out.println(Integer.toBinaryString(2));
+        int[] a = new int[]{1, 2, 3};
+        StringBuilder sb = new StringBuilder();
 
     }
 }
