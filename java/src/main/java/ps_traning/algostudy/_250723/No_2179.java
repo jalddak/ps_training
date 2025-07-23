@@ -1,4 +1,4 @@
-package ps_traning.algostudy;
+package ps_traning.algostudy._250723;
 
 import java.io.BufferedReader;
 import java.io.IOException;
