@@ -11,9 +11,16 @@ public class Test {
         System.out.println(2 ^ 1);
         System.out.println(Integer.toBinaryString(2));
         int[] a = new int[]{1, 2, 3};
-        StringBuilder sb = new StringBuilder();
 
         Queue<Integer> q = new LinkedList<>();
 
+        StringBuilder sb = new StringBuilder();
+        sb.append("asd");
+        StringBuilder result = new StringBuilder();
+        result.append(sb);
+        System.out.println(result);
+        System.out.println("   3    ");
+        System.out.println("   3");
+        System.out.println("   3    ");
     }
 }
