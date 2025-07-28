@@ -1,13 +1,16 @@
+package ps_traning.baekjoon.random;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+/**
+ * 세그먼트 트리 (개선)
+ */
+public class No_1306_2 {
     private static int n, m;
-    private static int[] lights;
-    private static int[][] segTree;
+    private static int[] lights, segTree;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,43 +26,42 @@ public class Main {
         }
 
         // segTree : [num, first, last]
-        segTree = new int[4 * n + 1][3];
+        segTree = new int[4 * n];
         makeSegTree(1, 0, n - 1);
 
         int range = 2 * m - 1;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n - range + 1; i++) {
-            int first = i;
-            int last = first + range - 1;
-            sb.append(searchMax(1, first, last)).append(" ");
+            int left = i;
+            int right = left + range - 1;
+            sb.append(searchMax(1, 0, n - 1, left, right)).append(" ");
         }
         sb.append("\n");
         System.out.print(sb);
     }
 
-    private static int searchMax(int idx, int first, int last) {
-        int left = segTree[idx][1];
-        int right = segTree[idx][2];
+    private static int searchMax(int idx, int first, int last, int left, int right) {
 
-        if (left >= first && right <= last) return segTree[idx][0];
-        int mid = (left + right) / 2;
+        if (first >= left && last <= right) return segTree[idx];
+        int mid = (first + last) / 2;
 
-        int[] candidates = {-1, -1};
-        if (first <= mid) candidates[0] = searchMax(idx * 2, first, last);
-        if (last > mid) candidates[1] = searchMax(idx * 2 + 1, first, last);
+        int leftMax = -1;
+        int rightMax = -1;
+        if (left <= mid) leftMax = searchMax(idx * 2, first, mid, left, right);
+        if (right > mid) rightMax = searchMax(idx * 2 + 1, mid + 1, last, left, right);
 
-        return Arrays.stream(candidates).max().getAsInt();
+        return Math.max(leftMax, rightMax);
     }
 
     private static void makeSegTree(int idx, int first, int last) {
         if (first == last) {
-            segTree[idx] = new int[]{lights[first], first, last};
+            segTree[idx] = lights[first];
             return;
         }
 
         int mid = (first + last) / 2;
         makeSegTree(idx * 2, first, mid);
         makeSegTree(idx * 2 + 1, mid + 1, last);
-        segTree[idx] = new int[]{Math.max(segTree[idx * 2][0], segTree[idx * 2 + 1][0]), first, last};
+        segTree[idx] = Math.max(segTree[idx * 2], segTree[idx * 2 + 1]);
     }
 }

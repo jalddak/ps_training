@@ -1,10 +1,15 @@
+package ps_traning.baekjoon.random;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+/**
+ * 세그먼트 트리
+ */
+public class No_1306 {
     private static int n, m;
     private static int[] lights;
     private static int[][] segTree;
