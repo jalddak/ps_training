@@ -11,5 +11,9 @@ public class Test {
 
         arr = a.chars().map(c -> c - '0').toArray();
         System.out.println(Arrays.toString(arr));
+
+        String[] split = a.split("");
+        System.out.println(Arrays.toString(split));
+
     }
 }

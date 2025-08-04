@@ -1,10 +1,12 @@
+package ps_traning.s14.baekjoon;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_2636 {
 
 
     public static void main(String[] args) throws Exception {
