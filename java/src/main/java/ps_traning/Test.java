@@ -15,5 +15,7 @@ public class Test {
         String[] split = a.split("");
         System.out.println(Arrays.toString(split));
 
+        System.out.println("test");
+
     }
 }
