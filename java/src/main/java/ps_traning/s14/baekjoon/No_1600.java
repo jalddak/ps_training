@@ -1,10 +1,12 @@
+package ps_traning.s14.baekjoon;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_1600 {
 
     private static int k, w, h;
     private static int[][] board;
