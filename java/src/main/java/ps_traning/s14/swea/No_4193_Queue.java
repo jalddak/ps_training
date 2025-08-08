@@ -1,13 +1,16 @@
+package ps_traning.s14.swea;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.PriorityQueue;
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-class Solution {
+class No_4193_Queue {
 
-    private static int[] dy = {-1, 0, 1, 0};
-    private static int[] dx = {0, 1, 0, -1};
+    private static int[] dy = {-1, 0, 1, 0, 0};
+    private static int[] dx = {0, 1, 0, -1, 0};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,10 +36,10 @@ class Solution {
             int ey = Integer.parseInt(st.nextToken());
             int ex = Integer.parseInt(st.nextToken());
 
-            PriorityQueue<int[]> q = new PriorityQueue<>((a, b) -> a[2] - b[2]);
+            Queue<int[]> q = new ArrayDeque<>();
             q.offer(new int[]{sy, sx, 0});
-            boolean[][] visited = new boolean[n][n];
-            visited[sy][sx] = true;
+            boolean[][][] visited = new boolean[n][n][3];
+//            visited[sy][sx][0] = true;
 
             int answer = -1;
             while (!q.isEmpty()) {
@@ -46,16 +49,14 @@ class Solution {
                     answer = t;
                     break;
                 }
-                for (int d = 0; d < 4; d++) {
+                for (int d = 0; d < 5; d++) {
                     int ny = y + dy[d];
                     int nx = x + dx[d];
-                    if (ny >= n || nx >= n || ny < 0 || nx < 0 || board[ny][nx] == 1 || visited[ny][nx])
+                    if (ny >= n || nx >= n || ny < 0 || nx < 0 || board[ny][nx] == 1 || visited[ny][nx][t % 3]
+                            || (d != 4 && board[ny][nx] == 2 && t % 3 != 2))
                         continue;
-                    int nt = t + 1;
-                    if (board[ny][nx] == 2) nt = t + 2 - (t % 3) + 1;
-
-                    visited[ny][nx] = true;
-                    q.offer(new int[]{ny, nx, nt});
+                    visited[ny][nx][t % 3] = true;
+                    q.offer(new int[]{ny, nx, t + 1});
                 }
             }
             sb.append("#").append(tc).append(" ").append(answer).append("\n");
@@ -63,3 +64,4 @@ class Solution {
         System.out.print(sb);
     }
 }
+

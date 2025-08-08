@@ -1,10 +1,12 @@
+package ps_traning.s14.swea;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Solution {
+class No_4193_PQ {
 
     private static int[] dy = {-1, 0, 1, 0};
     private static int[] dx = {0, 1, 0, -1};
