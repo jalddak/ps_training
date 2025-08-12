@@ -1,8 +1,10 @@
+package ps_traning.s14.baekjoon;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_2571 {
 
     private static int n, result;
     private static int[][] board = new int[101][101];
@@ -57,3 +59,4 @@ public class Main {
         }
     }
 }
+
