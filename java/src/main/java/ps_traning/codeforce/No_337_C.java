@@ -1,9 +1,11 @@
+package ps_traning.codeforce;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-public class Main {
+public class No_337_C {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -37,3 +39,4 @@ public class Main {
         return result;
     }
 }
+

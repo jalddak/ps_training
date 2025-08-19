@@ -1,9 +1,11 @@
+package ps_traning.algostudy._250819;
+
 import java.util.*;
 
-class Solution {
+class No_43164 {
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        No_43164 sol = new No_43164();
         sol.solution(new String[][]{{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}});
         sol.solution(new String[][]{
                 {"ICN", "SFO"},
