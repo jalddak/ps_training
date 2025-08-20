@@ -1,4 +1,4 @@
-package ps_traning.algostudy._250819;
+package ps_traning.algostudy._250819.programmers;
 
 import java.util.Arrays;
 
