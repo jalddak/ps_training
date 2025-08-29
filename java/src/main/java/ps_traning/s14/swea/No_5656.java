@@ -1,3 +1,5 @@
+package ps_traning.s14.swea;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-class Solution {
+class No_5656 {
 
     private static int n, w, h, answer;
     private static int[] dy = {-1, 0, 1, 0};
@@ -104,3 +106,4 @@ class Solution {
         return result;
     }
 }
+
