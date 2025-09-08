@@ -1,53 +1,92 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Main {
 
+    private static int n, t;
+    private static String[][] board;
+    private static int[][] believe;
+    private static int[] dy = {-1, 1, 0, 0};
+    private static int[] dx = {0, 0, -1, 1};
+    private static PriorityQueue<int[]> pq;
+
     public static void main(String[] args) throws Exception {
+        // Please write your code here.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int v = Integer.parseInt(st.nextToken());
-        int e = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
+        t = Integer.parseInt(st.nextToken());
+        board = new String[n][n];
 
-        int start = Integer.parseInt(br.readLine());
-        int[] distances = new int[v + 1];
-        Arrays.fill(distances, Integer.MAX_VALUE);
-        distances[start] = 0;
-
-
-        Map<Integer, Map<Integer, Integer>> edges = new HashMap<>();
-        for (int i = 0; i < e; i++) {
-            st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            int w = Integer.parseInt(st.nextToken());
-            if (!edges.containsKey(a)) edges.put(a, new HashMap<>());
-            if (!edges.get(a).containsKey(b)) edges.get(a).put(b, w);
-            if (edges.get(a).get(b) > w) edges.get(a).put(b, w);
-        }
-
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {
-            return a[0] - b[0];
-        });
-        pq.offer(new int[]{distances[start], start});
-        while (!pq.isEmpty()) {
-            int[] info = pq.poll();
-            int d = info[0], node = info[1];
-            if (d > distances[node] || !edges.containsKey(node)) continue;
-            for (int next : edges.get(node).keySet()) {
-                int temp = d + edges.get(node).get(next);
-                if (distances[next] < temp) continue;
-                distances[next] = temp;
-                pq.offer(new int[]{temp, next});
+        for (int i = 0; i < n; i++) {
+            String input = br.readLine();
+            for (int j = 0; j < n; j++) {
+                board[i][j] = String.valueOf(input.charAt(j));
             }
         }
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 1; i <= v; i++) {
-            sb.append(distances[i] == Integer.MAX_VALUE ? "INF" : distances[i]).append("\n");
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < n; j++) {
+                believe[i][j] = Integer.parseInt(st.nextToken());
+            }
         }
-        System.out.print(sb);
+
+        pq = new PriorityQueue<>((a, b) -> {
+            if (a[0] == b[0]) {
+                int bP = believe[b[1]][b[2]] - believe[a[1]][a[2]];
+                if (bP == 0) {
+                    if (a[1] == b[1]) return a[2] - b[2];
+                    return a[1] - b[1];
+                }
+                return bP;
+            }
+            return a[0] - b[0];
+        });
+
+    }
+
+    private static void lunch() {
+        boolean[][] visited = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (visited[i][j]) continue;
+                visited[i][j] = true;
+                Queue<int[]> q = new ArrayDeque<>();
+                int ry = i, rx = j;
+                while (!q.isEmpty()) {
+                    int[] poll = q.poll();
+                    int y = poll[0], x = poll[1];
+                    if (believe[y][x] > believe[ry][rx]
+                            || (believe[y][x] == believe[ry][rx] && (y < ry || (y == ry && x < rx)))) {
+                        ry = y;
+                        rx = x;
+                    }
+
+                    for (int d = 0; d < 4; d++) {
+                        int ny = y + dy[d];
+                        int nx = x + dx[d];
+                        if (ny >= n || nx >= n || ny < 0 || nx < 0 || !board[ny][nx].equals(board[y][x]) || visited[ny][nx])
+                            continue;
+                        visited[ny][nx] = true;
+                        q.add(new int[]{ny, nx});
+                    }
+                }
+                pq.offer(new int[]{board[ry][rx].length(), ry, rx});
+            }
+        }
+    }
+
+    private static void morning() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                believe[i][j] += 1;
+            }
+        }
     }
 }
