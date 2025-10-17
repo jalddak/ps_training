@@ -1,3 +1,5 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
@@ -5,7 +7,7 @@ import java.util.HashSet;
 import java.util.Queue;
 import java.util.Set;
 
-public class Main {
+public class No_10026 {
 
     private static int n;
     private static char[][] board;
