@@ -1,3 +1,5 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -5,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_15686 {
     private static int n, m, MAX, answer;
     private static int[][] board;
     private static List<int[]> hs = new ArrayList<>();
