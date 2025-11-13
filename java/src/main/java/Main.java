@@ -1,63 +1,59 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
-    private static int n, m, MAX, answer;
+
+    private static int n, m;
     private static int[][] board;
-    private static List<int[]> hs = new ArrayList<>();
-    private static List<int[]> chs = new ArrayList<>();
-    private static int[] distances;
+    private static int[] dy = {-1, 0, 1, 0};
+    private static int[] dx = {0, 1, 0, -1};
 
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
-        board = new int[n][n];
-        MAX = (n - 1) * 2;
-        answer = MAX * n * n;
 
+        board = new int[n][m];
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < n; j++) {
-                board[i][j] = Integer.parseInt(st.nextToken());
-                if (board[i][j] == 1) hs.add(new int[]{i, j});
-                if (board[i][j] == 2) chs.add(new int[]{i, j});
+            String row = br.readLine();
+            for (int j = 0; j < m; j++) board[i][j] = row.charAt(j) - '0';
+        }
+
+        boolean[][][] visited = new boolean[n][m][2];
+
+        visited[0][0][0] = true;
+        Queue<int[]> q = new ArrayDeque<>();
+        q.add(new int[]{1, 0, 0, 0});
+
+        int result = -1;
+        while (!q.isEmpty()) {
+            // cnt, y, x, bk
+            int[] poll = q.poll();
+            int cnt = poll[0], y = poll[1], x = poll[2], bk = poll[3];
+            if (y == n - 1 && x == m - 1) {
+                result = cnt;
+                break;
+            }
+            for (int d = 0; d < 4; d++) {
+                int ny = y + dy[d];
+                int nx = x + dx[d];
+                if (ny >= n || nx >= m || ny < 0 || nx < 0 || visited[ny][nx][0]) continue;
+                int nBk = bk;
+                if (board[ny][nx] == 1) {
+                    if (bk == 1) continue;
+                    else nBk = 1;
+                }
+                if (visited[ny][nx][nBk]) continue;
+                visited[ny][nx][nBk] = true;
+                q.add(new int[]{cnt + 1, ny, nx, nBk});
             }
         }
-        distances = new int[hs.size()];
-        Arrays.fill(distances, MAX);
-
-        recursion(0, 0, distances);
-        System.out.println(answer);
-
-    }
-
-    private static void recursion(int depth, int idx, int[] distances) {
-        if (depth == m) {
-            answer = Math.min(answer, Arrays.stream(distances).sum());
-            return;
-        }
-        for (int i = idx; i < chs.size() - m + depth + 1; i++) {
-            int cy = chs.get(i)[0], cx = chs.get(i)[1];
-            int[] nDistances = calcDistance(cy, cx, distances);
-            recursion(depth + 1, i + 1, nDistances);
-        }
-    }
-
-    private static int[] calcDistance(int cy, int cx, int[] distances) {
-        int[] result = new int[hs.size()];
-        for (int i = 0; i < hs.size(); i++) {
-            int[] hcrd = hs.get(i);
-            int hy = hcrd[0], hx = hcrd[1];
-            result[i] = Math.min(distances[i], Math.abs(cy - hy) + Math.abs(cx - hx));
-        }
-        return result;
+        System.out.println(result);
     }
 }
