@@ -1,8 +1,10 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_14500 {
 
     private static int n, m, result;
     private static int[][] board;
