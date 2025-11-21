@@ -1,65 +1,65 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+import static java.lang.System.exit;
 
 public class Main {
 
-    private static int len;
-    private static Map<Character, Integer> cnts = new HashMap<>();
-    private static Stack<Character> stack = new Stack<>();
-    private static boolean flag = false;
-    private static boolean[][][][] visited = new boolean[51][51][51][3];
+    private static int k, len;
+    private static String result;
+    private static Set<String> set = new HashSet<>();
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String input = br.readLine();
-        len = input.length();
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        cnts.put('A', 0);
-        cnts.put('B', 0);
-        cnts.put('C', 0);
-        for (char c : input.toCharArray()) cnts.put(c, cnts.get(c) + 1);
+        String sNum = st.nextToken();
+        len = sNum.length();
+        k = Integer.parseInt(st.nextToken());
 
-        backTracking(-1);
-        StringBuilder sb = new StringBuilder();
-        if (!flag) sb.append(-1);
-        else {
-            for (char c : stack) {
-                sb.append(c);
+        int cnt = 0;
+        int zeroCnt = 0;
+        boolean flag = false;
+        for (char c : sNum.toCharArray()) {
+            if (c != '0') cnt++;
+            else zeroCnt++;
+            if (cnt >= 2 || zeroCnt >= 2) {
+                flag = true;
+                break;
             }
         }
-        System.out.println(sb);
-
-    }
-
-    private static void backTracking(int before) {
-        if (before != -1 && visited[cnts.get('A')][cnts.get('B')][cnts.get('C')][before]) return;
-
-        if (stack.size() == len) {
-            flag = true;
-            return;
+        if (!flag) {
+            System.out.println(-1);
+            exit(0);
         }
 
-        for (char c = 'C'; c >= 'A'; c--) {
-            if (cnts.get(c) > 0) {
-                if (c == 'B' && (!stack.isEmpty() && stack.get(stack.size() - 1) == c)) continue;
-                if (c == 'C' &&
-                        ((!stack.isEmpty() && stack.get(stack.size() - 1) == c) ||
-                                stack.size() >= 2 && stack.get(stack.size() - 2) == c)) continue;
-                stack.push(c);
-                cnts.put(c, cnts.get(c) - 1);
-                backTracking(c - 'A');
-                if (flag) break;
-                cnts.put(c, cnts.get(c) + 1);
-                stack.pop();
+        set.add(sNum);
+
+        for (int t = 0; t < k; t++) {
+            Set<String> next = new HashSet<>();
+            for (String num : set) {
+                for (int i = 0; i < len; i++) {
+                    for (int j = i + 1; j < len; j++) {
+                        StringBuilder sb = new StringBuilder();
+                        for (int a = 0; a < len; a++) {
+                            if (a == i) sb.append(num.charAt(j));
+                            else if (a == j) sb.append(num.charAt(i));
+                            else sb.append(num.charAt(a));
+                        }
+                        next.add(sb.toString());
+                    }
+                }
             }
+
+            set = next;
         }
 
-        if (before != -1)
-            visited[cnts.get('A')][cnts.get('B')][cnts.get('C')][before] = true;
-
+        result = Collections.max(set);
+        System.out.println(result);
 
     }
 }
