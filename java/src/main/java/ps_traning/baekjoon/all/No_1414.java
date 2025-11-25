@@ -1,3 +1,5 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -6,7 +8,7 @@ import java.util.PriorityQueue;
 
 import static java.lang.System.exit;
 
-public class Main {
+public class No_1414 {
 
     private static int n, result;
     private static char[][] board;
