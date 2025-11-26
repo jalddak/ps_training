@@ -1,10 +1,12 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_19236 {
 
     private static int[] dy = {0, -1, -1, 0, 1, 1, 1, 0, -1};
     private static int[] dx = {0, 0, -1, -1, -1, 0, 1, 1, 1};
@@ -120,9 +122,6 @@ public class Main {
                 break;
 
             }
-
-
         }
-
     }
 }
