@@ -1,9 +1,10 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
-
+public class No_9370 {
 
     private static int n, m, t, s, g, h;
     private static List<int[]>[] edges;
