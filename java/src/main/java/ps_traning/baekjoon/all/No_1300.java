@@ -1,8 +1,10 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-class Solution {
+class No_1300 {
 
     private static int n, k;
 
@@ -58,3 +60,4 @@ class Solution {
         return new long[]{minCnt, maxCnt, maxNum};
     }
 }
+
