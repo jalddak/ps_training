@@ -2,7 +2,6 @@ package ps_traning.baekjoon.all;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 class No_1300 {
 
@@ -29,7 +28,6 @@ class No_1300 {
         while (l + 1 < r) {
             long mid = (l + r) / 2;
             long[] temp = check(mid);
-            System.out.println(Arrays.toString(temp) + " " + mid);
             if (temp[0] <= k && temp[1] >= k) {
                 result = temp[2];
                 break;
