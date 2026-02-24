@@ -1,49 +1,48 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class Main {
 
-    private static int r, c, answer;
-    private static char[][] board;
-    private static int[] dy = {-1, 0, 1, 0};
-    private static int[] dx = {0, 1, 0, -1};
-    private static Set<Character> set = new HashSet<>();
+    private static int n, d;
+    private static int[] arr;
 
     public static void main(String[] args) throws Exception {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        r = Integer.parseInt(st.nextToken());
-        c = Integer.parseInt(st.nextToken());
-        answer = 0;
+        n = Integer.parseInt(st.nextToken());
+        d = Integer.parseInt(st.nextToken());
 
-        board = new char[r][c];
+        arr = new int[n + 1];
+        st = new StringTokenizer(br.readLine());
 
-        for (int i = 0; i < r; i++) {
-            board[i] = br.readLine().toCharArray();
+        long answer = Long.MIN_VALUE;
+        for (int i = 1; i <= n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            answer = Math.max(answer, arr[i]);
         }
 
-        set.add(board[0][0]);
-        dfs(1, 0, 0);
+        Deque<long[]> dq = new ArrayDeque<>();
+        dq.offer(new long[]{0, 0});
+
+        for (int i = 1; i <= n; i++) {
+            if (!dq.isEmpty() && i - dq.peekFirst()[0] > d)
+                dq.pollFirst();
+
+            long temp = dq.peekFirst()[1] + arr[i];
+            if (!dq.isEmpty() && temp < 0) {
+                dq.offer(new long[]{i, 0});
+                continue;
+            }
+            while (!dq.isEmpty() && dq.peekLast()[1] <= temp)
+                dq.pollLast();
+            dq.offer(new long[]{i, temp});
+            answer = Math.max(answer, temp);
+        }
 
         System.out.println(answer);
-    }
-
-    private static void dfs(int depth, int y, int x) {
-
-        answer = Math.max(depth, answer);
-        for (int d = 0; d < 4; d++) {
-            int ny = y + dy[d];
-            int nx = x + dx[d];
-
-            if (ny < 0 || nx < 0 || ny >= r || nx >= c || set.contains(board[ny][nx])) continue;
-            set.add(board[ny][nx]);
-            dfs(depth + 1, ny, nx);
-            set.remove(board[ny][nx]);
-        }
     }
 }
