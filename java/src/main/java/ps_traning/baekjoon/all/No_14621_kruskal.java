@@ -1,10 +1,12 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No_14621_kruskal {
 
     private static int n, m, answer, count;
     private static char[] g;
