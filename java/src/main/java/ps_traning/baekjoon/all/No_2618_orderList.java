@@ -1,8 +1,11 @@
+package ps_traning.baekjoon.all;
+
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class No_2618_orderList {
 
     private static int n, w;
     private static int[][] events;
@@ -34,15 +37,13 @@ public class Main {
                 left.cost += Math.abs(left.ly - ey) + Math.abs(left.lx - ex);
                 left.ly = ey;
                 left.lx = ex;
-                left.order = 1;
-                left.before = poll;
+                left.order.add(1);
 
                 Info right = new Info(poll);
                 right.cost += Math.abs(right.ry - ey) + Math.abs(right.rx - ex);
                 right.ry = ey;
                 right.rx = ex;
-                right.order = 2;
-                right.before = poll;
+                right.order.add(2);
 
 
                 if (poll.ry == by && poll.rx == bx) {
@@ -62,34 +63,26 @@ public class Main {
         }
 
         StringBuilder sb = new StringBuilder();
-        int minCost = Integer.MAX_VALUE;
-        Info answer = null;
+        int answerCost = Integer.MAX_VALUE;
+        List<Integer> answerOrder = null;
         while (!q.isEmpty()) {
             Info poll = q.poll();
-            if (minCost > poll.cost) {
-                answer = poll;
-                minCost = poll.cost;
+            if (answerCost > poll.cost) {
+                answerCost = poll.cost;
+                answerOrder = poll.order;
             }
-        }
 
-        sb.append(answer.cost).append("\n");
-        List<Integer> reverseOrder = new ArrayList<>();
-        while (answer.order != -1) {
-            reverseOrder.add(answer.order);
-            answer = answer.before;
-        }
 
-        Collections.reverse(reverseOrder);
-        for (int o : reverseOrder) {
+        }
+        sb.append(answerCost).append("\n");
+        for (int o : answerOrder)
             sb.append(o).append("\n");
-        }
-
         System.out.println(sb);
     }
 
     static class Info {
-        int ly, lx, ry, rx, cost, order;
-        Info before;
+        int ly, lx, ry, rx, cost;
+        List<Integer> order = new ArrayList<>();
 
         public Info(int ly, int lx, int ry, int rx, int cost) {
             this.ly = ly;
@@ -97,7 +90,6 @@ public class Main {
             this.ry = ry;
             this.rx = rx;
             this.cost = cost;
-            this.order = -1;
         }
 
         public Info(Info before) {
@@ -106,6 +98,7 @@ public class Main {
             this.ry = before.ry;
             this.rx = before.rx;
             this.cost = before.cost;
+            this.order.addAll(before.order);
         }
 
         public String toString() {
