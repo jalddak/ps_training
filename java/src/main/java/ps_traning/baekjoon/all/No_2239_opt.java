@@ -1,9 +1,11 @@
+package ps_traning.baekjoon.all;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class No_2239_opt {
 
     private static int[][] board = new int[9][9];
     private static List<int[]> order = new ArrayList<>();
