@@ -1,32 +1,53 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class Main {
 
+    private static List<Integer> list = new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        long[][] dp = new long[31][31];
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+        List<Integer> list = new ArrayList<>();
+        List<Integer> rList = new ArrayList<>();
 
-        for (int h = 0; h <= 30; h++) {
-            for (int w = 1; w <= 30; w++) {
-                if (h == 0) {
-                    dp[w][h] = 1;
-                    continue;
-                }
-                if (w > h) {
-                    dp[w][h] += dp[w - 1][h];
-                }
-                dp[w][h] += dp[w][h - 1];
-            }
+        int answer = 0;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        StringBuilder sb = new StringBuilder();
-        while (true) {
-            int n = Integer.parseInt(br.readLine());
-            if (n == 0) break;
-            sb.append(dp[n][n]).append("\n");
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            bs(arr[i], list);
+            bs(arr[n - 1 - i], rList);
+            result[i] += list.size();
+            result[n - 1 - i] += rList.size();
         }
-        System.out.println(sb);
+
+        answer = Arrays.stream(result).max().getAsInt() - 1;
+
+        System.out.println(answer);
+    }
+
+    private static void bs(int num, List<Integer> list) {
+        int l = -1;
+        int r = list.size();
+
+        while (l + 1 < r) {
+            int mid = (l + r) / 2;
+            if (list.get(mid) < num) l = mid;
+            else r = mid;
+        }
+
+        if (r == list.size()) list.add(num);
+        else list.set(r, num);
     }
 }
